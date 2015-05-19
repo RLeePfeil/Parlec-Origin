@@ -1,0 +1,103 @@
+doctype html
+html(lang="en").no-js
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    title Parlec Origin
+    meta(name="description", content="Parlec Origin")
+    include _head.jade
+
+  body#index
+    a(href="#main").visuallyhidden Skip to main content
+    .container
+    include _header
+    
+    section#main
+      .row
+        .columns.small-12.medium-6.medium-offset-1.large-5.large-offset-0
+          h1 Introducing Parlec Origin
+          p Let this entry level bench mounted Tool Measuring Machine be the beginning of your process. The Origin is designed to provide basic video tool measuring and inspection functionality at an economical price.
+          button(href="#signup") Free Trial
+      
+    section#find-a-dealer  
+      a#btn-find-a-dealer(href="#open-find-a-dealer") Find a Dealer
+      div.visuallyhidden
+        Map goes here
+      
+    section#presetter(data-magellan-arrival="presetter")
+      h2 Presetter
+      div.shaded-bg.presetter-1
+        img.presetter-image(src="images/presetter/presetter-1.jpg")
+        span.pointer.vertical.measuring-length-pointer
+        div.info-block.measuring-length
+          dl
+            dt Measuring length
+            dd
+              p 508mm (20")
+      
+      div.white-bg.presetter-2
+        img.presetter-image(src="images/presetter/presetter-2.jpg")
+        span.pointer.left.surface-illumination-pointer
+        div.info-block.surface-illumination
+          dl
+            dt Surface illumination
+            dd
+        
+        span.pointer.left.rapid-positioning-handle-pointer
+        div.info-block.rapid-positioning-handle
+          dl
+            dt Rapid positioning handle
+            dd
+              p Electronic braking
+      
+      div.shaded-bg.presetter-3
+        img.presetter-image(src="images/presetter/presetter-3.jpg")
+        span.pointer.right.spindle-pointer
+        div.info-block.spindle
+          dl
+            dt Spindle
+            dd
+              p 40 or 50 taper <br/>(CAT/BT/ISO/SK)
+              p 360 degree braking
+              p 360 angle indicator
+              p Adapt to other connectors <br/>with additional adapters
+      
+      
+    section#software(data-magellan-arrival="software")
+      h2 Software
+      .white-bg
+        .row
+          img.columns.small-12.medium-6(src="images/software/screen1.jpg" alt="")
+          div.columns.small-12.medium-6
+            h3 The revolutionary Origin software is the most intuitive software on the market
+            p It is designed to be "Smart Phone Easy". While others may think more buttons are better, all of us here at Parlec share a different belief. We believe more buttons create more confusion. The Origin sofware is designed around the simple premise that less is more. This software provides the most important information such as length, diameter, radius and angle without pressing a button.
+            p <strong>More advanced measurements are performed with a single click.</strong>
+      
+      div.shaded-bg
+        .row
+          p.columns.small-12 Using the <strong>Radius and Angle Templating</strong> function to compare features against a predefined image. Once the template is displayed, just drag the template over the feature that is being inspected for quick comparison.
+          img.columns.small-12.medium-6(src="images/software/screen2.jpg" alt="")
+          img.columns.small-12.medium-6(src="images/software/screen3.jpg" alt="")
+          img.columns.small-12.medium-6(src="images/software/screen4.jpg" alt="")
+          img.columns.small-12.medium-6(src="images/software/screen5.jpg" alt="")
+      
+      div.white-bg
+        .row
+          p.columns.small-12 Using the <strong>Radius and Angle Templating</strong> function to compare features against a predefined image. Once the template is displayed, just drag the template over the feature that is being inspected for quick comparison.
+          img.columns.small-12.medium-6(src="images/software/screen6.jpg" alt="")
+          img.columns.small-12.medium-6(src="images/software/screen7.jpg" alt="")
+        
+    section#sign-up(data-magellan-arrival="sign-up")
+      .row
+        .columns.small-12.medium-8.medium-offset-2
+          h3 Sign up for a free trial today!
+          form#signup-form
+            input(type="text", placeholder="First name", name="first_name")
+            input(type="text", placeholder="Last name", name="last_name")
+            input(type="text", placeholder="Email", name="email")
+            input(type="text", placeholder="Company", name="company")
+            textarea(placeholder="Comments", name="comments")
+            button(type="submit") Sign Up
+    
+    include _footer
+    include _scripts.jade
