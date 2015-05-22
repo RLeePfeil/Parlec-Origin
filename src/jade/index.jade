@@ -21,8 +21,72 @@ html(lang="en").no-js
       
     section#find-a-dealer  
       a#btn-find-a-dealer(href="#open-find-a-dealer") Find a Dealer
-      div.visuallyhidden
-        Map goes here
+      .dealer-map(style="display:none")
+        div.dealer-map-container
+          ul
+            li.company-1
+              .company-info-block(style="display:none")
+                img(src="images/companies/logo1.png", alt="Company 1")
+                h5 Company Name
+                p Company info and stuff. Maybe number.
+                a(/company/1) View page
+              span.bullet
+            li.company-2
+              .company-info-block(style="display:none")
+                img(src="images/companies/logo1.png", alt="Company 1")
+                h5 Company Name
+                p Company info and stuff. Maybe number.
+                a(/company/2) View page
+              span.bullet
+            li.company-3
+              .company-info-block(style="display:none")
+                img(src="images/companies/logo1.png", alt="Company 1")
+                h5 Longer Company Name
+                p Company info and stuff. Maybe number.
+                a(/company/3) View page
+              span.bullet
+            li.company-4
+              .company-info-block(style="display:none")
+                img(src="images/companies/logo1.png", alt="Company 1")
+                h5 Longerer Company Name
+                p Company info and stuff. Maybe number.
+                a(/company/4) View page
+              span.bullet
+            li.company-5
+              .company-info-block(style="display:none")
+                img(src="images/companies/logo1.png", alt="Company 1")
+                h5 Super Long Company Name
+                p Company info and stuff. Maybe number.
+                a(/company/5) View page
+              span.bullet
+            li.company-6
+              .company-info-block(style="display:none")
+                img(src="images/companies/logo1.png", alt="Company 1")
+                h5 Company Name
+                p Company info and stuff. Maybe number.
+                a(/company/6) View page
+              span.bullet
+            li.company-7
+              .company-info-block(style="display:none")
+                img(src="images/companies/logo1.png", alt="Company 1")
+                h5 The Company Name
+                p Company info and stuff. Maybe number.
+                a(/company/7) View page
+              span.bullet
+            li.company-8
+              .company-info-block(style="display:none")
+                img(src="images/companies/logo1.png", alt="Company 1")
+                h5 Company Name Inc.
+                p Company info and stuff. Maybe number.
+                a(/company/8) View page
+              span.bullet
+            li.company-9
+              .company-info-block(style="display:none")
+                img(src="images/companies/logo1.png", alt="Company 1")
+                h5 Company Name LLC
+                p Company info and stuff. Maybe number. Perhaps more text even.
+                a(/company/9) View page
+              span.bullet
       
     section#presetter(data-magellan-arrival="presetter")
       h2 Presetter
@@ -62,6 +126,44 @@ html(lang="en").no-js
               p 360 angle indicator
               p Adapt to other connectors <br/>with additional adapters
       
+      div.white-bg.presetter-4
+        img.presetter-image(src="images/presetter/presetter-4.jpg")
+        span.pointer.left.fine-adjustment-pointer
+        div.info-block.fine-adjustment
+          dl
+            dt Fine adjustment
+            dd
+        
+        span.pointer.left.composite-base-pointer
+        div.info-block.composite-base
+          dl
+            dt Composite base
+            dd
+              p Electronic braking
+        
+        span.pointer.left.measuring-diameter-pointer
+          span
+        div.info-block.measuring-diameter
+          dl
+            dt Measuring diameter
+            dd
+              p 254 mm (10")
+        
+      div.shaded-bg.presetter-5
+        img.presetter-image(src="images/presetter/presetter-5.jpg")
+        span.pointer.right.video-measuring-pointer
+        div.info-block.video-measuring
+          dl
+            dt Video measuring
+            dd
+              p 70x
+        
+        span.pointer.right.widescreen-monitor-pointer
+        div.info-block.widescreen-monitor
+          dl
+            dt Widescreen monitor
+            dd
+              p 19"
       
     section#software(data-magellan-arrival="software")
       h2 Software

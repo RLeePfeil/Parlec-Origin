@@ -10,4 +10,685 @@
 // custom
 @import "theme/base";
 @import "theme/typography";
-@import "theme/meatntaters";
+
+
+
+// CSS variables
+
+$blue: #10578d;
+$lightblue: #eaeff5;
+$darkblue: #0a4571;
+$grey: #656565; $gray: $grey;
+$lightgrey: #a5a9ac; $lightgray: $lightgrey;
+$stripes: "../images/stripes.png";
+$darkstripes: "../images/stripes-dark.png";
+$headerheight: 104px;
+
+
+// Main / general styles
+
+html, body {
+	color: #636363;
+	font-size: 14px;
+	background-color: #FFF;
+}
+
+section {
+	overflow: hidden;
+	clear: both;
+}
+
+.stripe-bg {
+	background-image: url($stripes);
+	background-repeat: repeat;
+}
+
+.shaded-bg {
+	background-color: $lightblue;
+}
+
+.white-bg {
+	background-color: #FFF;
+}
+
+
+// Typography
+
+h1 {
+	font-size: 400%;
+	font-weight: 300;
+	color: #FFF;
+}
+
+h2 {
+	font-size: 300%;
+	font-weight: 300;
+	text-align: center;
+	color: $grey;
+	letter-spacing: .05em;
+	padding-top: 2em;
+	margin-bottom: 2.5em;
+	
+	&:after {
+		content: "";
+		width: 2em;
+		position: absolute;
+		left: 50%;
+		margin-left: -1em;
+		height: 1px;
+		background-color: $lightgrey;
+		margin-top: 2em;
+	}
+}
+
+h3 {
+	text-transform: uppercase;
+	color: $blue;
+}
+
+h4 {
+	font-size: 150%;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+
+// Nav
+
+header {
+	height: $headerheight;
+	background-color: #FFF!important;
+	
+	.main-nav {
+		float: right;
+		margin-top: 28px;
+		
+		li {
+			float: left;
+			list-style: none;
+			//margin-left: .25em;
+			margin-left: 2.5em;
+		}
+		
+		a {
+			text-transform: uppercase;
+			color: $blue;
+			position: relative;
+			font-weight: 700;
+			//padding: 1.5em;
+			
+			&:after {
+				content: "";
+				position: relative;
+				display: block;
+				//margin-left: 1.5em;
+				//margin-right: 1.5em;
+				//top: -1em;
+				top: -2em;
+				
+				height: 1px;
+				width: 0;
+				background-color: $blue;
+				transition: all 0.35s ease-out 0s;
+			}
+			
+			&:hover, &:focus, &:active {
+				color: $blue;
+				
+				&:after {
+					width: 100%;
+				}
+			}
+		}
+	}
+	
+	&:after {
+		content: "";
+		display: block;
+		height: 12px;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		background: url($stripes) 0 0 repeat;
+	}
+}
+
+
+// Content styles
+
+section#main {
+	padding-top: $headerheight; // Offset the fixed header
+	background-color: $blue;
+	background-image: url(../images/bg-main.jpg);
+	background-size: cover;
+	color: #FFF;
+	min-height: 644px;
+	
+	.row {
+		padding-top: 100px;
+	}
+	
+	h1 {
+		&:after {
+			content: "";
+			height: 120px;
+			left: -25px;
+			position: absolute;
+			top: 54px;
+			width: 12px;
+			background-image: url($darkstripes);
+		}
+	}
+	
+	button {
+		border: 1px solid #FFF;
+		border-radius: 3px;
+		font-weight: 700;
+		text-transform: uppercase;
+		background-image: url($darkstripes);
+	}
+}
+
+section#find-a-dealer {
+	background-image: url($stripes);
+	background-position: top center;
+	
+	.dealer-map {
+		padding: 0 100px 100px;
+		
+		.dealer-map-container {
+			background-image: url(../images/map.png);
+			background-size: 100% auto;
+			padding-bottom: 61.382%;
+			position: relative;
+		}
+		
+		li {
+			position: absolute;
+			list-style: none;
+			
+			.company-info-block {
+				padding: 20px;
+				background-color: $lightblue;
+				position: absolute;
+				bottom: 40px;
+				transform: translate(-50%);
+				
+				&:after {
+					position: absolute;
+					bottom: -8px;
+					left: 50%;
+					margin-left: -8px;
+					content: "";
+					display: block;
+					width: 16px;
+					height: 16px;
+					transform: rotateZ(45deg);
+					background-color: $lightblue;
+				}
+				
+				img {
+					width: 40px;
+					float: left;
+					margin-right: 10px;
+				}
+				
+				h5, p, a {
+					margin-left: 60px;
+				}
+				
+				h5 {
+					transform-text: uppercase;
+					white-space: nowrap;
+				}
+				
+				a {
+					display: block;
+				}
+			}
+			
+			span.bullet {
+				position: relative;
+				display: block;
+				background: $grey;
+				color: #FFF;
+				width: 20px;
+				height: 20px;
+				content: "+";
+				line-height: 20px;
+				font-weight: 700;
+				border-radius: 100%;
+				margin-top: -10px;
+				margin-left: -10px;
+				cursor: pointer;
+				
+				&:before {
+					content: "";
+					position: absolute;
+					left: -4px;
+					top: -4px;
+					width: 28px;
+					height: 28px;
+					border: 1px solid $grey;
+					border-radius: 100%;
+				}
+				
+				&:after {
+					content: "+";
+					position: absolute;
+					text-align: center;
+					width: 20px;
+					height: 20px;
+					line-height: 18px;
+					z-index: 10;
+					color: #FFF;
+				}
+			}
+			
+			&.company-1 {
+				left: 27%;
+				top: 13%;
+			}
+			
+			&.company-2 {
+				left: 16%;
+				top: 37%;
+			}
+			
+			&.company-3 {
+				left: 36%;
+				top: 48%;
+			}
+			
+			&.company-4 {
+				left: 58%;
+				top: 38%;
+			}
+			
+			&.company-5 {
+				left: 43%;
+				top: 75%;
+			}
+			
+			&.company-6 {
+				left: 71%;
+				top: 58%;
+			}
+			
+			&.company-7 {
+				left: 84%;
+				top: 24%;
+			}
+			
+			&.company-8 {
+				left: 96%;
+				top: 9%;
+			}
+			
+			&.company-9 {
+				left: 83%;
+				top: 78%;
+			}
+		}
+	}
+}
+
+#btn-find-a-dealer {
+	display: block;
+	padding: 3em 0 4em;
+	width: 100%;
+	color: $blue;
+	font-size: 200%;
+	font-weight: 500;
+	text-align: center;
+	text-transform: uppercase;
+	
+	// Carat
+	&:before, &:after {
+		content: "";
+		width: .75em;
+		height: 2px;
+		background-color: $blue;
+		position: absolute;
+		left: 50%;
+		margin-top: 2em;
+	}
+	
+	&:before {
+		transform: rotate(45deg);
+		margin-left: -.65em;
+	}
+	
+	&:after {
+		transform: rotate(-45deg);
+		margin-left: -.15em;
+	}
+}
+
+section#presetter {
+	background-color: $lightblue;
+	
+	& > div {
+		position: relative;
+		overflow: hidden;
+	}
+	
+	.info-block {
+		position: absolute;
+		
+		dl {
+			dt {
+				color: $blue;
+				text-transform: uppercase;
+				font-size: 200%;
+				font-weight: 300;
+				
+				@include mq(netbook) {
+					&:before {
+						content: "";
+						height: 13px;
+						background-image: url($darkstripes);
+						width: 100%;
+						position: absolute;
+						margin-top: -24px;
+					}
+				}
+			}
+			
+			dd {
+				color: $grey;
+			}
+		}
+	}
+	
+	@include mq(netbook) {
+		
+		.pointer {
+			position: absolute;
+			background-color: $lightgrey;
+			
+			&:after {
+				content: "";
+				background-color: $lightgrey;
+				position: absolute;
+			}
+			
+			&.vertical {
+				width: 1px;
+				margin-top: 5px;
+				
+				&:after {
+					width: 13px;
+					height: 1px;
+					margin-left: -6px;
+					margin-top: -5px;
+				}
+			}
+			
+			&.left, &.right {
+				height: 1px;
+				margin-top: -18px;
+				
+				&:after {
+					width: 1px;
+					height: 13px;
+					margin-top: -6px;
+				}
+			}
+			
+			&.left {
+				&:after {
+					left: -5px;
+				}
+			}
+			
+			&.right {
+				&:after {
+					right: -5px;
+				}
+			}
+		}
+		
+		.pointer.vertical {
+			width: 1px;
+		}
+		
+		.presetter-1 {
+			.presetter-image {
+				margin-left: 8.83%;
+				width: 34.41%;
+			}
+		}
+		
+		.measuring-length-pointer {
+			top: 3%;
+			left: 45.5%;
+			height: 150%;
+		}
+		
+		.measuring-length {
+			left: 59.42%;
+			top: 35%;
+		}
+		
+		.presetter-2 {
+			.presetter-image {
+				width: 66%;
+				margin-left: 34%;
+			}
+		}
+		
+		.surface-illumination-pointer {
+			top: 3%;
+			left: 45.5%;
+			height: 150%;
+			
+			&:after {
+				position: absolute;
+				width: 13px;
+				height: 1px
+			}
+		}
+		
+		.surface-illumination-pointer {
+			left: 35.5%;
+			top: 37.84%;
+			width: 14.33%;
+			margin-left: 10px;
+		}
+		
+		.surface-illumination {
+			right: 64.5%;
+			top: 37.84%;
+		}
+		
+		.rapid-positioning-handle-pointer {
+			left: 40.08%;
+			top: 60.66%;
+			width: 51.08%;
+			margin-left: 10px;
+		}
+		
+		.rapid-positioning-handle {
+			right: 59.92%;
+			top: 60.66%;
+		}
+		
+		.presetter-3 {
+			.presetter-image {
+				width: 69.08%;
+			}
+		}
+		
+		.spindle-pointer {
+			top: 34.13%;
+			right: 30%;
+			width: 26.67%;
+			margin-right: 10px;
+		}
+		
+		.spindle {
+			left: 70%;
+			top: 34.13%;
+		}
+		
+		.presetter-4 {
+			.presetter-image {
+				width: 64.17%;
+				margin-left: 35.83%;
+			}
+			
+			.pointer, .info-block {
+				left: 9.5%;
+			}
+		}
+		
+		.fine-adjustment-pointer {
+			top: 30%;
+			width: 29.42%;
+			margin-left: 18em;
+		}
+		
+		.fine-adjustment {
+			top: 30%;
+		}
+		
+		.composite-base-pointer {
+			top: 50.68%;
+			width: 40.33%;
+			margin-left: 17.5em;
+		}
+		
+		.composite-base {
+			top: 50.68%;
+		}
+		
+		.measuring-diameter-pointer {
+			top: 70.56%;
+			width: 52.67%;
+			margin-left: 22.1em;
+			
+			&:before {
+				content: "";
+				height: 13px;
+				width: 1px;
+				background: $lightgrey;
+				position: absolute;
+				right: 0;
+				margin-top: -6px;
+			}
+			
+			span {
+				height: 13px;
+				width: 1px;
+				background-color: $lightgrey;
+				position: absolute;
+				margin-top: -6px;
+				left: 8.24%;
+			}
+		}
+		
+		.measuring-diameter {
+			top: 70.56%;
+		}
+		
+		.presetter-5 {
+			.presetter-image {
+				width: 45.7%;
+			}
+			
+			.pointer, .info-block {
+				right: 9.92%;
+			}
+		}
+		
+		.video-measuring-pointer {
+			top: 34.13%;
+			width: 26.75%;
+			margin-right: 18.35em;
+		}
+		
+		.video-measuring {
+			top: 34.13%;
+		}
+		
+		.widescreen-monitor-pointer {
+			top: 63.14%;
+			width: 20.67%;
+			margin-right: 22.75em;
+		}
+		
+		.widescreen-monitor {
+			top: 63.14%;
+		}
+	}
+	
+	@include mq(netbook-max) {
+		.info-block {
+			padding: 20px;
+			background-color: #FFF;
+			width: 80%;
+			left: 10%;
+			top: 10%;
+		}
+		
+		.white-bg {
+			.info-block {
+				background-color: $lightblue;
+			}
+		}
+		
+		.presetter-image {
+			width: 100%;
+		}
+		
+		.presetter-1 {
+			.presetter-image {
+				margin-bottom: -28%;
+			}
+		}
+	}
+}
+
+section#software {
+	& > div {
+		padding-bottom: 4em;
+	}
+	
+	.shaded-bg {
+		color: $blue;
+	}
+	
+	p.small-12 {
+		padding: 4em 0 2.75em;
+		text-align: center;
+	}
+}
+
+section#sign-up {
+	background-color: $blue;
+	padding: 4em 0;
+	
+	h3 {
+		color: #FFF;
+		padding-bottom: 2em;
+		text-align: center;
+	}
+	
+	form {
+		color: $grey;
+	}
+	
+	button {
+		width: 100%;
+		color: #FFF;
+		text-transform: uppercase;
+		background-color: $darkblue;
+		
+		&:hover {
+			background-color: $lightblue;
+			color: $blue;
+		}
+	}
+}

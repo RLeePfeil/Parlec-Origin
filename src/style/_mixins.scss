@@ -9,7 +9,10 @@
 
     @else if $breakpoint == netbook
     {@media only screen and (min-width: 768px) {@content; } }
-
+    
+    @else if $breakpoint == netbook-max
+    {@media only screen and (max-width: 768px) {@content; } }
+    
     @else if $breakpoint == desktop
     {@media only screen and (min-width: 1024px) {@content; } }
 }
