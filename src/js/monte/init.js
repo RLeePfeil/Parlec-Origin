@@ -22,14 +22,16 @@
             
             // Event handlers
             $('#btn-find-a-dealer').on('click', function(){
+                $('#find-a-dealer').addClass('open');
                 $('.dealer-map').slideDown();
+                setTimeout(function(){$('#find-a-dealer').css('background-image', 'none')}, 600); // Probably a better way to do this!
             });
             
             $('.dealer-map').find('span.bullet').on('click', function(){
                 // Hide others
-                $('.dealer-map').find('.company-info-block').hide();
+                $('.dealer-map').find('li').removeClass('open');
                 // Show this company info
-                $(this).parent().find('.company-info-block').show();
+                $(this).parent().addClass('open');
             });
         },
 

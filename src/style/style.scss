@@ -193,142 +193,240 @@ section#main {
 section#find-a-dealer {
 	background-image: url($stripes);
 	background-position: top center;
+	transition: background-color 1s ease-in-out 0s;
 	
-	.dealer-map {
-		padding: 0 100px 100px;
+	&.open {
+		background-color: $blue;
 		
-		.dealer-map-container {
-			background-image: url(../images/map.png);
-			background-size: 100% auto;
-			padding-bottom: 61.382%;
-			position: relative;
-		}
-		
-		li {
-			position: absolute;
-			list-style: none;
+		#btn-find-a-dealer {
+			color: #FFF;
 			
-			.company-info-block {
-				padding: 20px;
-				background-color: $lightblue;
-				position: absolute;
-				bottom: 40px;
-				transform: translate(-50%);
-				
-				&:after {
-					position: absolute;
-					bottom: -8px;
-					left: 50%;
-					margin-left: -8px;
-					content: "";
-					display: block;
-					width: 16px;
-					height: 16px;
-					transform: rotateZ(45deg);
-					background-color: $lightblue;
-				}
-				
-				img {
-					width: 40px;
-					float: left;
-					margin-right: 10px;
-				}
-				
-				h5, p, a {
-					margin-left: 60px;
-				}
-				
-				h5 {
-					transform-text: uppercase;
-					white-space: nowrap;
-				}
-				
-				a {
-					display: block;
-				}
+			&:before, &:after {
+				background-color: #FFF;
+			}
+		}
+	}
+	
+	.dealer-map li {
+		list-style: none;
+		margin-bottom: 20px;
+		
+		.company-info-block {
+			padding: 0 20px 20px;
+			
+			img {
+				width: 40px;
+				float: left;
+				margin-right: 10px;
 			}
 			
-			span.bullet {
-				position: relative;
-				display: block;
-				background: $grey;
+			h5, p, a {
+				margin-left: 60px;
+			}
+			
+			h5 {
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
 				color: #FFF;
-				width: 20px;
-				height: 20px;
-				content: "+";
-				line-height: 20px;
-				font-weight: 700;
-				border-radius: 100%;
-				margin-top: -10px;
-				margin-left: -10px;
-				cursor: pointer;
+				min-width: 9.75em;
+			}
+			
+			p {
+				font-weight: 100;
+				letter-spacing: 0.05em;
+				color: #FFF;
+			}
+			
+			a {
+				display: block;
+				color: #FFF;
+				position: relative;
+				font-weight: 500;
+				transition: all .35s ease-in-out 0s;
+				
+				// Carat
+				&:before, &:after {
+					content: "";
+					width: .55em;
+					height: 3px;
+					background-color: #FFF;
+					position: absolute;
+					top: 39%;
+					left: 5.9em;
+					transition: all .35s ease-in-out 0s;
+				}
 				
 				&:before {
-					content: "";
-					position: absolute;
-					left: -4px;
-					top: -4px;
-					width: 28px;
-					height: 28px;
-					border: 1px solid $grey;
-					border-radius: 100%;
+					margin-left: -0.65em;
+					transform: rotate(-135deg);
 				}
 				
 				&:after {
-					content: "+";
-					position: absolute;
-					text-align: center;
-					width: 20px;
-					height: 20px;
-					line-height: 18px;
-					z-index: 10;
-					color: #FFF;
+					margin-left: -0.65em;
+					margin-top: 0.25em;
+					transform: rotate(-45deg);
+				}
+				
+				&:hover {
+					color: $lightblue;
+					
+					&:before, &:after {
+						left: 6.25em;
+						background-color: $lightblue;
+					}
 				}
 			}
+		}
+		
+		span.bullet {
+			display: none;
+		}
+	}
+	
+	@include mq(tablet) {
+		.dealer-map li {
+			width: 50%;
+			float: left;
+		}
+	}
+	
+	@include mq(netbook) {
+		.dealer-map {
+			padding: 0 10% 10%;
 			
-			&.company-1 {
-				left: 27%;
-				top: 13%;
+			.dealer-map-container {
+				background-image: url(../images/map.png);
+				background-size: 100% auto;
+				padding-bottom: 61.382%;
+				position: relative;
 			}
 			
-			&.company-2 {
-				left: 16%;
-				top: 37%;
-			}
-			
-			&.company-3 {
-				left: 36%;
-				top: 48%;
-			}
-			
-			&.company-4 {
-				left: 58%;
-				top: 38%;
-			}
-			
-			&.company-5 {
-				left: 43%;
-				top: 75%;
-			}
-			
-			&.company-6 {
-				left: 71%;
-				top: 58%;
-			}
-			
-			&.company-7 {
-				left: 84%;
-				top: 24%;
-			}
-			
-			&.company-8 {
-				left: 96%;
-				top: 9%;
-			}
-			
-			&.company-9 {
-				left: 83%;
-				top: 78%;
+			li {
+				position: absolute;
+				width: auto;
+				float: none;
+				
+				&.open {
+					.company-info-block {
+						transform: translateX(-50%) translateY(0px);
+						opacity: 1;
+						left: 0;
+						transition: transform .35s ease-out 0s, opacity .35s ease-out 0s, left 0s ease-out 0s;
+					}
+				}
+				
+				.company-info-block {
+					padding: 20px;
+					border: 2px solid #FFF;
+					background-color: $blue;
+					position: absolute;
+					bottom: 40px;
+					transform: translateX(-50%) translateY(20px);
+					z-index: 11;
+					opacity: 0;
+					left: -9999em; // To delay-hide it after fade out
+					transition: transform .15s ease-out 0s, opacity .15s ease-out 0s, left 0s ease-out .15s;
+					
+					&:after {
+						position: absolute;
+						bottom: -8px;
+						left: 50%;
+						margin-left: -8px;
+						content: "";
+						display: block;
+						width: 16px;
+						height: 16px;
+						transform: rotateZ(45deg);
+						background-color: $blue;
+					}
+					
+					h5 {
+						white-space: nowrap;
+					}
+				}
+				
+				span.bullet {
+					position: relative;
+					display: block;
+					background: $grey;
+					color: #FFF;
+					width: 20px;
+					height: 20px;
+					content: "+";
+					line-height: 20px;
+					font-weight: 700;
+					border-radius: 100%;
+					margin-top: -10px;
+					margin-left: -10px;
+					cursor: pointer;
+					
+					&:before {
+						content: "";
+						position: absolute;
+						left: -4px;
+						top: -4px;
+						width: 28px;
+						height: 28px;
+						border: 1px solid $grey;
+						border-radius: 100%;
+					}
+					
+					&:after {
+						content: "+";
+						position: absolute;
+						text-align: center;
+						width: 20px;
+						height: 20px;
+						line-height: 18px;
+						z-index: 10;
+						color: #FFF;
+					}
+				}
+				
+				&.company-1 {
+					left: 27%;
+					top: 13%;
+				}
+				
+				&.company-2 {
+					left: 16%;
+					top: 37%;
+				}
+				
+				&.company-3 {
+					left: 36%;
+					top: 48%;
+				}
+				
+				&.company-4 {
+					left: 58%;
+					top: 38%;
+				}
+				
+				&.company-5 {
+					left: 43%;
+					top: 75%;
+				}
+				
+				&.company-6 {
+					left: 71%;
+					top: 58%;
+				}
+				
+				&.company-7 {
+					left: 84%;
+					top: 24%;
+				}
+				
+				&.company-8 {
+					left: 96%;
+					top: 9%;
+				}
+				
+				&.company-9 {
+					left: 83%;
+					top: 78%;
+				}
 			}
 		}
 	}
@@ -336,13 +434,18 @@ section#find-a-dealer {
 
 #btn-find-a-dealer {
 	display: block;
-	padding: 3em 0 4em;
+	padding: 1em 0 2em;
 	width: 100%;
 	color: $blue;
 	font-size: 200%;
 	font-weight: 500;
 	text-align: center;
 	text-transform: uppercase;
+	transition: color 1s ease-in-out 0s;
+	
+	@include mq(netbook) {
+		padding: 3em 0 4em;
+	}
 	
 	// Carat
 	&:before, &:after {
@@ -353,6 +456,7 @@ section#find-a-dealer {
 		position: absolute;
 		left: 50%;
 		margin-top: 2em;
+		transition: background-color 1s ease-in-out 0s;
 	}
 	
 	&:before {
