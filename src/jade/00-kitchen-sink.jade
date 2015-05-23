@@ -8,256 +8,88 @@ html(lang="en").no-js
     include _head.jade
 
   body#index
-    h1.visuallyhidden Ted Hosmer
-    a(href="#main").visuallyhidden Skip to main content
     .container
       include _header.jade
+      
+      section#main
+        .row
+          .columns.small-12.medium-6.medium-offset-1.large-5.large-offset-0
+          h1 section#main &lt;h1&gt; tag
+          p section#main &lt;p&gt; tag. Lorem ipsum doler sit amat.
+          button(href="#signup") section#main &lt;button&gt;
+          
+      
+      section.white-bg
+        .row
+          .columns.small-12
+            h2 Colors
+            ul.block-grid-medium-3.block-grid-large-6
+              li
+                .swatch.blue-bg
+                p #10578d
+              li
+                .swatch.lightblue-bg
+                p #eaeff5;
+              li
+                .swatch.white-bg
+                p #fff
+              li
+                .swatch.grey-bg
+                p #656565
+              li
+                .swatch.lightgrey-bg
+                p #a5a9ac
+              li
+                .swatch.orange-bg
+                p #f46744
+              li
+                .swatch.stripes-bg
+                p url(../images/stripes.png)
+              li
+                .swatch.darkstripes-bg
+                p url(../images/stripes-dark.png)
+        
+        
+      section.shaded-bg
+        .row
+          .columns.small-12
+            h2 Typography (this is an h2 tag)
+            p When creating content for the site <strong>never use the &lt;h1&gt; tag</strong>. Anything from &lt;h2&gt; - &lt;h6&gt; is valid. The &lt;p&gt; can be used as well.
+            hr
+            h3 Titles (this is an h3 tag)
+            h4 This is an h4 tag
+            h5 This is an h5 tag
+            h6 This is an h6 tag
+            hr
+            h3 Body
+            p This is a paragraph. Lorem ipsum doler sit amat.
+            ul
+              li This is an unordered list
+              li This is an unordered list
+              li This is an unordered list
+            dl
+              dt This is a definition list title
+              dd This is a definition list description
+              dt This is a definition list title
+              dd This is a definition list description
+              dt This is a definition list title
+              dd This is a definition list description
+      
+      section.white-bg
+        .row
+          .columns.small-12
+            h2 Buttons
+            button Button Text
+            p &lt;button&gt;Button Text&lt;button&gt;
+      
+      section#sign-up.shaded-bg
+        .row
+          .columns.small-12
+            h2 Form Elements
+            input(type="text", placeholder="Your name (input)")
+            textarea(placeholder="Comments (textarea)")
+            button(type="submit") Button
 
-      main#main.main
-        .page-sidebar.bg-01
-          header.sidebar-header
-            .sidebar-hgroup
-              div
-                h1.page-title Kitchen Sink
-                p.page-subtitle Design elements and their HTML/CSS counterparts
-            .sidebar-footer
-              p Built for Ted Hosmer Enterprises by Archer Communications, Inc. &copy;
-
-
-        .page-main
-          .page-section
-            .section-header
-              h2.section-title Colors
-            .main-column
-              ul.block-grid-medium-3.block-grid-large-6
-                li
-                  .swatch.dark-green-bg
-                  p #018357
-                li
-                  .swatch.green-bg
-                  p #33b676
-                li
-                  .swatch.white-bg
-                  p #fff
-                li
-                  .swatch.off-white-bg
-                  p #f7f6f5
-                li
-                  .swatch.tan-bg
-                  p #e0dfdc
-                li
-                  .swatch.brown-bg
-                  p #463e3b
-
-
-          .page-section
-            .section-header
-              h2.section-title Typography
-            .main-column
-              .page-section
-                h3 Titles
-                p When creating content for the site <strong>never use the &lt;h1&gt; tag</strong>. Anything from &lt;h2&gt; - &lt;h6&gt; is valid. The &lt;p&gt; can be used as well.
-                ul.titles-list
-                  li
-                    .columns
-                      h4.homepage-title Your landscape property maintenence professionals
-                      pre.
-                        &lt;h4 class="homepage-title"&gt;Your landscape property maintenence professionals&lt;/h4&gt;
-
-                  li
-                    .columns
-                      h4.page-title Commercial Snow removal
-                      pre.
-                        &lt;h4 class="page-title"&gt;Commercial Snow removal&lt;/h4&gt;
-
-                  li
-                    .columns
-                      h4.page-subtitle Florem ipsum gorse rose prairie gentian china aster rock-rose.
-                      pre.
-                        &lt;h4 class="page-subtitle"&gt;Florem ipsum gorse rose prairie gentian china aster rock-rose.&lt;/h4&gt;
-
-                  li
-                    .columns
-                      h4.title-1 Upstate New York's Leading property maintenence professionals
-                      pre.
-                        &lt;h4 class="title-1"&gt;Upstate New York's Leading property maintenence professionals&lt;/h4&gt;
-
-                  li
-                    .columns
-                      h4.section-title Available Services
-                      pre.
-                        &lt;h4 class="section-title"&gt;Available Services&lt;/h4&gt;
-
-                  li
-                    .columns
-                      h4.title-3 Focused on service
-                      pre.
-                        &lt;h4 class="title-3"&gt;Focused on service&lt;/h4&gt;
-
-                  li
-                    .columns
-                      h4.title-4 2-Stage - Self-Propelled
-                      pre.
-                        &lt;h4 class="title-4"&gt;2-Stage - Self-Propelled&lt;/h4&gt;
-
-                  li
-                    .columns
-                      h4.title-5 February 10th, 2015
-                      pre.
-                        &lt;h4 class="title-5"&gt;February 10th, 2015&lt;/h4&gt;
-              .page-section
-                h3 Body
-                p
-                  strong Fertilzer yer stuff
-                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dolores impedit, quas tenetur aliquam corporis id saepe modi suscipit excepturi itaque fugit ipsam ab ipsa culpa fugiat. Asperiores, expedita voluptates!
-                ul
-                  li Each centralized area has 3-5 dedicated crew members.
-                  li Employees are trained and review properties prior to the first snow event to get familiar with your property and your needs.
-                  li Most employees have been with us for many years and can predict upcoming concerns.
-                  li Foremen inspect the job to make sure it's to your satisfaction.
-                a(href="#") View more
-
-
-
-          .page-section
-            .section-header
-              h2.section-title Buttons
-            .main-column
-              ul.medium-block-grid-2
-                li
-                  a(href="#").btn-1 Read more
-                  pre.
-                    &lt;a href="#" class="btn-1"&gt;Read more&lt;/a&gt;
-                li
-                  a(href="#").btn-2 Contact Us online
-                  pre.
-                    &lt;a href="#" class="btn-2"&gt;Contact Us online&lt;/a&gt;
-                li
-                  a(href="#").arrow.green.previous-btn Previous
-                  pre.
-                    &lt;a href="#" class="arrow green previous-btn"&gt;Previous&lt;/a&gt;
-                li
-                  a(href="#").arrow.green Next
-                  pre.
-                    &lt;a href="#" class="arrow green"&gt;Next&lt;/a&gt;
-                li
-                  a(href="#").arrow.white View all specials
-                  pre.
-                    &lt;a href="#" class="arrow white"&gt;View all specials&lt;/a&gt;
-                li
-                  a(href="#").arrow.black Learn more
-                  pre.
-                    &lt;a href="#" class="arrow black"&gt;Learn more&lt;/a&gt;
-
-
-          .page-section
-            .section-header
-              h2.section-title Icons
-            .main-column
-              ul.icons-list.small-block-grid-3
-                li
-                  i.icon.potted-plant
-                  pre.
-                    &lt;i class="icon potted-plant"&gt;&lt;/i&gt;
-                li
-                  i.icon.tree
-                  pre.
-                    &lt;i class="icon tree"&gt;&lt;/i&gt;
-                li
-                  i.icon.snow
-                  pre.
-                    &lt;i class="icon snow"&gt;&lt;/i&gt;
-                li
-                  i.icon.wrench
-                  pre.
-                    &lt;i class="icon wrench"&gt;&lt;/i&gt;
-                li
-                  i.icon.truck
-                  pre.
-                    &lt;i class="icon truck"&gt;&lt;/i&gt;
-                li
-                  i.icon.dots
-                  pre.
-                    &lt;i class="icon dots"&gt;&lt;/i&gt;
-                li
-                  i.icon.tree-roots
-                  pre.
-                    &lt;i class="icon tree-roots"&gt;&lt;/i&gt;
-                li
-                  i.icon.history
-                  pre.
-                    &lt;i class="icon history"&gt;&lt;/i&gt;
-                li
-                  i.icon.news
-                  pre.
-                    &lt;i class="icon news"&gt;&lt;/i&gt;
-                li
-                  i.icon.smallengine
-                  pre.
-                    &lt;i class="icon smallengine"&gt;&lt;/i&gt;
-                li
-                  i.icon.specials
-                  pre.
-                    &lt;i class="icon specials"&gt;&lt;/i&gt;
-                li
-                  i.icon.worktag
-                  pre.
-                    &lt;i class="icon worktag"&gt;&lt;/i&gt;
-                li
-                  i.icon.snowremoval
-                  pre.
-                    &lt;i class="icon snowremoval"&gt;&lt;/i&gt;
-                li
-                  i.icon.arrow-down
-                  pre.
-                    &lt;i class="icon arrow-down"&gt;&lt;/i&gt;
-                li
-                  i.icon.arrow-left
-                  pre.
-                    &lt;i class="icon arrow-left"&gt;&lt;/i&gt;
-                li
-                  i.icon.arrow-right
-                  pre.
-                    &lt;i class="icon arrow-right"&gt;&lt;/i&gt;
-                li
-                  i.icon.arrow-up
-                  pre.
-                    &lt;i class="icon arrow-up"&gt;&lt;/i&gt;
-                li
-                  i.icon.little-arrow
-                  pre.
-                    &lt;i class="icon little-arrow"&gt;&lt;/i&gt;
-                li
-                  i.icon.menu
-                  pre.
-                    &lt;i class="icon menu"&gt;&lt;/i&gt;
-                li
-                  i.icon.phone
-                  pre.
-                    &lt;i class="icon phone"&gt;&lt;/i&gt;
-                li
-                  i.icon.place
-                  pre.
-                    &lt;i class="icon place"&gt;&lt;/i&gt;
-                li
-                  i.icon.user-icon
-                  pre.
-                    &lt;i class="icon user-icon"&gt;&lt;/i&gt;
-
-          .page-section
-            .section-header
-              h2.section-title Form Elements
-            .main-column
-              input(type="text", placeholder="Your name")
-
-
-          .page-section
-            .section-header
-              h2.section-title Available Services
-            .main-column
-              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam rerum dicta, molestiae pariatur, architecto qui magnam ex voluptas inventore voluptatum consectetur eos, velit nobis expedita quo nemo unde, aliquid id!
-
-
-          include _footer.jade
+      include _footer.jade
 
     include _scripts.jade

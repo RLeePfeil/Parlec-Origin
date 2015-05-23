@@ -7,12 +7,14 @@ html {
 // h5bp styles
 // ----------------------------------------
 ::-moz-selection {
-    background: $red;
+    background: $orange;
     text-shadow: none;
+    color: #FFF;
 }
 ::selection {
-    background: $red;
+    background: $orange;
     text-shadow: none;
+    color: #FFF;
 }
 hr {
     display: block;

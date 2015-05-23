@@ -8,9 +8,11 @@
 @import "vendor/foundation";
 //@import "foundation/components/magellan";
 // custom
+
+// CSS variables (orange is used in _base)
+$orange: #f46744; // From the Origin logo jpg
 @import "theme/base";
 @import "theme/typography";
-
 
 
 // CSS variables
@@ -20,10 +22,30 @@ $lightblue: #eaeff5;
 $darkblue: #0a4571;
 $grey: #656565; $gray: $grey;
 $lightgrey: #a5a9ac; $lightgray: $lightgrey;
+$orange: #f46744; // From the Origin logo jpg
 $stripes: "../images/stripes.png";
 $darkstripes: "../images/stripes-dark.png";
 $headerheight: 104px;
 
+
+// Kitchen Sink
+
+.blue-bg { background-color: $blue; }
+.lightblue-bg { background-color: $lightblue; }
+.grey-bg { background-color: $grey; }
+.lightgrey-bg { background-color: $lightgrey; }
+.orange-bg { background-color: $orange; }
+.stripes-bg { background-image: url($stripes); }
+.darkstripes-bg { background-image: url($darkstripes); }
+
+.swatch {
+	display: block;
+	height: 128px;
+	width: 128px;
+	//border: 2px solid #fff;
+	//outline: 2px solid #000;
+	box-shadow: 0 0 10px 2px #DDD;
+}
 
 // Main / general styles
 
@@ -66,8 +88,8 @@ h2 {
 	text-align: center;
 	color: $grey;
 	letter-spacing: .05em;
-	padding-top: 2em;
-	margin-bottom: 2.5em;
+	padding-top: .75em;
+	margin-bottom: 1.5em;
 	
 	&:after {
 		content: "";
@@ -78,6 +100,11 @@ h2 {
 		height: 1px;
 		background-color: $lightgrey;
 		margin-top: 2em;
+	}
+	
+	@include mq(netbook) {
+		padding-top: 2em;
+		margin-bottom: 2.5em;
 	}
 }
 
@@ -90,6 +117,14 @@ h4 {
 	font-size: 150%;
 	font-weight: 300;
 	text-transform: uppercase;
+}
+
+button {
+	background-color: $darkblue;
+	
+	&:hover {
+		background-color: $orange;
+	}
 }
 
 
@@ -183,10 +218,68 @@ section#main {
 	
 	button {
 		border: 1px solid #FFF;
-		border-radius: 3px;
-		font-weight: 700;
+		border-radius: 4px;
+		font-weight: 500;
 		text-transform: uppercase;
+		padding-right: 3em;
 		background-image: url($darkstripes);
+		background-color: rgba(255,255,255,.15);
+		
+		// Carat
+		&:before, &:after {
+			content: "";
+			width: .7em;
+			height: 1px;
+			background-color: #FFF;
+			position: absolute;
+			top: 40%;
+			right: 1.75em;
+			transition: all .35s ease-in-out 0s;
+		}
+		
+		&:before {
+			margin-left: -0.65em;
+			transform: rotate(-135deg);
+		}
+		
+		&:after {
+			margin-left: -0.65em;
+			margin-top: 0.45em;
+			transform: rotate(-45deg);
+		}
+		
+		&:hover {
+			background-color: $orange;
+			
+			&:before, &:after {
+				right: 1.4em;
+			}
+		}
+	}
+	
+	@include mq(netbook-max) {
+		padding-top: 100%;
+		background-color: #FFF;
+		background-size: 200% auto;
+		background-position: 100% top;
+		background-repeat: no-repeat;
+		
+		.row {
+			padding: 2rem;
+			color: $grey;
+			background-color: $lightblue;
+		}
+		
+		h1 {
+			color: $grey;
+			font-size: 3rem;
+			line-height: 1.15em;
+			margin-bottom: .5em;
+		}
+		
+		button {
+			background-color: $blue;
+		}
 	}
 }
 
@@ -768,11 +861,42 @@ section#software {
 		padding: 4em 0 2.75em;
 		text-align: center;
 	}
+	
+	img {
+		margin-bottom: 2rem;
+	}
+	
+	@include mq(netbook-max) {
+		& > div {
+			padding-bottom: 1.75em;
+		}
+		
+		div.small-12 {
+			padding: 0 2rem;
+		}
+		
+		p.small-12 {
+			padding: 3rem 2rem 1.75rem;
+		}
+		
+		
+		img {
+			padding: 0 2rem;
+		}
+	}
 }
 
 section#sign-up {
 	background-color: $blue;
 	padding: 4em 0;
+	
+	p {
+		color: #FFF;
+	}
+	
+	h2 {
+		color: #FFF;
+	}
 	
 	h3 {
 		color: #FFF;
@@ -784,15 +908,19 @@ section#sign-up {
 		color: $grey;
 	}
 	
+	input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
+		font-size: 1rem;
+		height: 3.5rem;
+		padding: 1rem 1rem 1rem 2rem;
+	}
+	
+	textarea {
+		min-height: 6.75rem;
+	}
+	
 	button {
 		width: 100%;
 		color: #FFF;
 		text-transform: uppercase;
-		background-color: $darkblue;
-		
-		&:hover {
-			background-color: $lightblue;
-			color: $blue;
-		}
 	}
 }
