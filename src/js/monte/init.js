@@ -20,18 +20,70 @@
                 this.modules[module].init();
             }
             
-            // Event handlers
+            /* * * * * * * * * *
+             * Event handlers  *
+             * * * * * * * * * */
+            
+            // Smooth scroll magellan links (to the appropriate spots)
+            $('a[data-magellan-arrival]').on('click', function(){
+                $('html,body').animate({
+                    scrollTop: $('#' + $(this).attr('data-magellan-arrival')).offset().top - 50
+                }, 1000);
+                
+                return false;
+            })
+            
+            // Open dealer map (desktop and mobile)
             $('#btn-find-a-dealer').on('click', function(){
                 $('#find-a-dealer').addClass('open');
                 $('.dealer-map').slideDown();
                 setTimeout(function(){$('#find-a-dealer').css('background-image', 'none')}, 600); // Probably a better way to do this!
             });
             
+            // Open company info when bullet is clicked on
             $('.dealer-map').find('span.bullet').on('click', function(){
                 // Hide others
                 $('.dealer-map').find('li').removeClass('open');
                 // Show this company info
                 $(this).parent().addClass('open');
+                return false; // Return false so the $(section) click event isn't triggered via event bubbling
+            });
+            
+            // When clicking on a pointer on mobile, show the info block
+            $('span.pointer').on('click', function(){
+                $('.info-block').removeClass('open');
+                $(this).next('.info-block').addClass('open');
+                return false; // Return false so the $(section) click event isn't triggered via event bubbling
+            }).filter(':eq(0)').trigger('click'); // Start with the first one open
+            
+            // When clicking next/prev in info blocks on mobile, show the next/prev info block and scroll to it
+            $('.next, .prev', '#presetter').on('click', function(){
+                var $this = $(this),
+                    $nextPointer;
+                
+                // Find the next pointer
+                if ($this.hasClass('prev')) {
+                    $nextPointer = $('.pointer:eq('+ ($('.info-block').index($this.closest('.info-block')) - 1) +')');
+                } else {
+                    $nextPointer = $('.pointer:eq('+ ($('.info-block').index($this.closest('.info-block')) + 1) +')');
+                }
+                
+                // Trigger next pointer and scroll to opening info box position
+                setTimeout(function(){$nextPointer.trigger('click')}, 500);
+                var $nextInfoBlock = $nextPointer.next('.info-block').show();
+                $('html,body').animate({
+                    scrollTop: $nextInfoBlock.offset().top - $nextInfoBlock.height() - 20
+                }, 1000);
+            });
+            
+            // Close open company info block when section#presetter is clicked
+            $('section#find-a-dealer').on('click', function() {
+                $('.dealer-map').find('li').removeClass('open');
+            });
+            
+            // Close open info block when section#presetter is clicked
+            $('section#presetter').on('click', function(){
+                $('.info-block').removeClass('open');
             });
             
             $(window).on('resize', window.parlec.onResize)

@@ -631,55 +631,7 @@ section#presetter {
 		}
 	}
 	
-	@include mq(netbook-max) {
-		// Design and align the pointers
-		.pointer {
-			position: absolute;
-			background-color: $lightgrey;
-			width: 20px;
-			height: 20px;
-			border-radius: 100%;
-			
-			&:after {
-				display: block;
-				content: "+";
-				width: 20px;
-				height: 20px;
-				line-height: 17px;
-				color: #FFF;
-				text-align: center;
-			}
-		}
-		
-		.info-block {
-			&:after {
-				position: absolute;
-				bottom: -8px;
-				left: 50%;
-				margin-left: -8px;
-				content: "";
-				display: block;
-				width: 16px;
-				height: 16px;
-				transform: rotateZ(45deg);
-				background-color: #FFF;
-			}
-		}
-		
-		.measuring-length-pointer {
-			top: 3%;
-			left: 45.5%;
-		}
-		
-		.measuring-length {
-			&:after {
-				
-			}
-		}
-	}
-	
 	@include mq(netbook) {
-		
 		.pointer {
 			position: absolute;
 			background-color: $lightgrey;
@@ -740,7 +692,7 @@ section#presetter {
 		.measuring-length-pointer {
 			top: 3%;
 			left: 45.5%;
-			height: 150%;
+			bottom: 0;
 		}
 		
 		.measuring-length {
@@ -901,17 +853,71 @@ section#presetter {
 	}
 	
 	@include mq(netbook-max) {
+		& > div {
+			overflow: visible;
+		}
+		
+		// Design and align the pointers
+		.pointer {
+			position: absolute;
+			background-color: $lightgrey;
+			width: 20px;
+			height: 20px;
+			border-radius: 100%;
+			margin: -10px 0 0 -10px;
+			
+			&:after {
+				display: block;
+				content: "+";
+				width: 20px;
+				height: 20px;
+				line-height: 17px;
+				color: #FFF;
+				text-align: center;
+			}
+		}
+		
 		.info-block {
+			opacity: 0;
+			left: -9999em; // To delay-hide it after fade out
+			transform: translateY(20px);
+			transition: transform .15s ease-out 0s, opacity .15s ease-out 0s, left 0s ease-out .15s;
+			
 			padding: 20px;
 			background-color: #FFF;
-			width: 80%;
-			left: 10%;
-			top: 10%;
+			width: 86%;
+			top: auto;
+			bottom: 50%;
+			margin-bottom: 40px; // to be offset above the pointer circle
+			
+			&:after {
+				position: absolute;
+				bottom: -8px;
+				left: 50%;
+				margin-left: -8px;
+				content: "";
+				display: block;
+				width: 16px;
+				height: 16px;
+				transform: scaleX(.65) scaleY(1.25) rotate(45deg);
+				background-color: #FFF;
+			}
+			
+			&.open {
+				transform: translateY(0px);
+				opacity: 1;
+				left: 7%;
+				transition: transform .35s ease-out 0s, opacity .35s ease-out 0s, left 0s ease-out 0s;
+			}
 		}
 		
 		.white-bg {
 			.info-block {
 				background-color: $lightblue;
+				
+				&:after {
+					background-color: $lightblue;
+				}
 			}
 		}
 		
@@ -922,6 +928,123 @@ section#presetter {
 		.presetter-1 {
 			.presetter-image {
 				margin-bottom: -28%;
+			}
+		}
+		
+		.measuring-length-pointer {
+			bottom: 25%;
+			left: 50%;
+		}
+		
+		.measuring-length {
+			bottom: 25%;
+		}
+		
+		.surface-illumination-pointer {
+			bottom: 59%;
+			left: 29%;
+		}
+		
+		.surface-illumination {
+			bottom: 59%;
+			
+			&:after {
+				left: 25.5%;
+			}
+		}
+		
+		.rapid-positioning-handle-pointer {
+			left: 84%;
+			bottom: 43%;
+		}
+		
+		.rapid-positioning-handle {
+			bottom: 43%;
+			
+			&:after {
+				left: 89.5%;
+			}
+		}
+		
+		.presetter-3 {
+			.presetter-image {
+				margin-top: 50%;
+			}
+		}
+		
+		.spindle-pointer {
+			bottom: 39%;
+			left: 50%;
+		}
+		
+		.spindle {
+			bottom: 39%;
+		}
+		
+		.presetter-4 {
+			margin-bottom: -23%;
+		}
+		
+		.fine-adjustment-pointer {
+			bottom: 64%;
+			left: 36%;
+		}
+		
+		.fine-adjustment {
+			bottom: 64%;
+			
+			&:after {
+				left: 34%;
+			}
+		}
+		
+		.composite-base-pointer {
+			bottom: 52%;
+			left: 50%;
+		}
+		
+		.composite-base {
+			bottom: 52%;
+		}
+		
+		.measuring-diameter-pointer {
+			bottom: 34%;
+			left: 41%;
+		}
+		
+		.measuring-diameter {
+			bottom: 34%;
+			
+			&:after {
+				left: 40%;
+			}
+		}
+		
+		.presetter-5 {
+			.presetter-image {
+				width: 90%;
+			}
+		}
+		
+		.video-measuring-pointer {
+			bottom: 41%;
+			left: 50%;
+		}
+		
+		.video-measuring {
+			bottom: 41%;
+		}
+		
+		.widescreen-monitor-pointer {
+			bottom: 24%;
+			left: 86%;
+		}
+		
+		.widescreen-monitor {
+			bottom: 24%;
+			
+			&:after {
+				left: 92%;
 			}
 		}
 	}
