@@ -73,6 +73,13 @@ section {
 	background-color: #FFF;
 }
 
+@include mq(netbook) {
+	.netbook-max {
+		display: none!important;
+		visibility: hidden!important;
+	}
+}
+
 
 // Typography
 
@@ -167,7 +174,7 @@ header {
 				transition: all 0.35s ease-out 0s;
 			}
 			
-			&:hover, &:focus, &:active {
+			&:hover, &:focus, &:active, &.active {
 				color: $blue;
 				
 				&:after {
@@ -597,6 +604,78 @@ section#presetter {
 				color: $grey;
 			}
 		}
+		
+		.next-prev {
+			text-align: right;
+			
+			.next, .prev {
+				text-transform: lowercase;
+				font-weight: 500;
+				font-size: 120%;
+				cursor: pointer;
+			}
+			
+			.next {
+				margin-left: 1em;
+				
+				&:after {
+					content: " >";
+				}
+			}
+			
+			.prev {
+				&:before {
+					content: "< ";
+				}
+			}
+		}
+	}
+	
+	@include mq(netbook-max) {
+		// Design and align the pointers
+		.pointer {
+			position: absolute;
+			background-color: $lightgrey;
+			width: 20px;
+			height: 20px;
+			border-radius: 100%;
+			
+			&:after {
+				display: block;
+				content: "+";
+				width: 20px;
+				height: 20px;
+				line-height: 17px;
+				color: #FFF;
+				text-align: center;
+			}
+		}
+		
+		.info-block {
+			&:after {
+				position: absolute;
+				bottom: -8px;
+				left: 50%;
+				margin-left: -8px;
+				content: "";
+				display: block;
+				width: 16px;
+				height: 16px;
+				transform: rotateZ(45deg);
+				background-color: #FFF;
+			}
+		}
+		
+		.measuring-length-pointer {
+			top: 3%;
+			left: 45.5%;
+		}
+		
+		.measuring-length {
+			&:after {
+				
+			}
+		}
 	}
 	
 	@include mq(netbook) {
@@ -922,5 +1001,11 @@ section#sign-up {
 		width: 100%;
 		color: #FFF;
 		text-transform: uppercase;
+	}
+	
+	@include mq(netbook) {
+		// so magellan looks good when arriving
+		min-height: 100%;
+		height: 100%;
 	}
 }

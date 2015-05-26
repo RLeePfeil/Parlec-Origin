@@ -33,8 +33,20 @@
                 // Show this company info
                 $(this).parent().addClass('open');
             });
+            
+            $(window).on('resize', window.parlec.onResize)
+                     .on('scroll', window.parlec.onScroll)
+                     .trigger('resize')
+                     .trigger('scroll');
         },
-
+        
+        onResize: function(e) {
+            
+        },
+        
+        onScroll: function(e) {
+            
+        },
 
         utils: {
             render_template: function(settings) {
