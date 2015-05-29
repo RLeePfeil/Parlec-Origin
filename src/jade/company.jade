@@ -1,0 +1,44 @@
+doctype html
+html(lang="en").no-js
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    title Parlec Origin
+    meta(name="description", content="Parlec Origin")
+    include _head.jade
+
+  body#company
+    a(href="#main").visuallyhidden Skip to main content
+    .container
+    include _header_company
+    
+    section#company-info
+      .row
+        .columns.small-12.medium-8
+          h1.company-name Company name
+          p.company-copy Lorem ipsum doler amat sit doler lorem. Ipsum doler sit amet consicutor mont amat lorem. Ullerum oberis nosevi amat sit lorem doler. Lorem ipsum doler amat sit doler lorem. Ipsum doler sit amet consicutor mont amat lorem. Ullerum oberis nosevi amat sit lorem doler.
+        .columns.small-12.medium-4
+          img.company-logo(src="images/companies/logo1.png")
+    
+    section#company-contact
+      .row
+        .columns.small-12
+          h3 Contact company
+        .columns.small-12.medium-6
+          p Lorem ipsum doler amat sit doler lorem. Ipsum doler sit amet consicutor mont amat lorem. Ullerum oberis nosevi amat sit lorem doler.
+          address 1234 Street Rd <br/> Chicago, IL 99441 <br/>
+            a(href="mailto:info@company.com") info@company.com
+        .columns.small-12.medium-6
+          form#contact-form
+            input(type="text", placeholder="First name", name="first_name")
+            input(type="text", placeholder="Last name", name="last_name")
+            input(type="text", placeholder="Email", name="email")
+            textarea(placeholder="Comments", name="comments")
+            button(type="submit") Send
+    
+    section#company-location
+      span.bullet
+      
+    
+    include _footer
+    include _scripts.jade
