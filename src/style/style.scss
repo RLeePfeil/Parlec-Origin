@@ -156,66 +156,7 @@ button {
 
 
 // Nav
-
-header {
-	height: $headerheight;
-	background-color: #FFF!important;
-	
-	.main-nav {
-		float: right;
-		margin-top: 28px;
-		
-		li {
-			float: left;
-			list-style: none;
-			//margin-left: .25em;
-			margin-left: 2.5em;
-		}
-		
-		a {
-			text-transform: uppercase;
-			color: $blue;
-			position: relative;
-			font-weight: 700;
-			//padding: 1.5em;
-			
-			&:after {
-				content: "";
-				position: relative;
-				display: block;
-				//margin-left: 1.5em;
-				//margin-right: 1.5em;
-				//top: -1em;
-				top: -2em;
-				
-				height: 1px;
-				width: 0;
-				background-color: $blue;
-				transition: all 0.35s ease-out 0s;
-			}
-			
-			&:hover, &:focus, &:active, &.active {
-				color: $blue;
-				
-				&:after {
-					width: 100%;
-				}
-			}
-		}
-	}
-	
-	&:after {
-		content: "";
-		display: block;
-		height: 12px;
-		width: 100%;
-		position: absolute;
-		left: 0;
-		top: $headerheight;
-		margin-top: -12px;
-		background: url($stripes) 0 0 repeat;
-	}
-}
+@import "theme/header";
 
 
 // Content styles
@@ -225,6 +166,7 @@ section#main {
 	background-color: $blue;
 	background-image: url(../images/bg-main.jpg);
 	background-size: cover;
+	background-position: 50% bottom;
 	color: #FFF;
 	min-height: 644px;
 	

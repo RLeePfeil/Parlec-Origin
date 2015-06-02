@@ -12,7 +12,8 @@ module.exports = function(grunt) {
         sass_assets: 'style/assets/',
         js_libs_dir: 'js/vendor/',
         js_files: [
-            'js/monte/init.js',
+            'js/parlec/init.js',
+            'js/parlec/nav.js',
         ],
         output: {
             folder:                 '../build/',

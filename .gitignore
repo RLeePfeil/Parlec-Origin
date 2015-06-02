@@ -1,3 +1,5 @@
 assets/
 build/
 src/node_modules
+src/style/vendor/.scss-cache
+src/style/theme/.scss-cache

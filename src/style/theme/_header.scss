@@ -1,0 +1,147 @@
+
+header {
+	height: $headerheight;
+	background-color: #FFF!important;
+	
+	.toggle-topbar {
+		display: block;
+		height: 1.5em;
+		width: 2em;
+		position: relative;
+		margin: 2rem 1.5rem 0 0;
+		font-size: 1rem;
+		float: right;
+		
+		a {
+			text-indent: -9999em;
+			display: block;
+			height: 1.5em;
+			width: 2em;
+			position: relative;
+			
+			&:before, &:after {
+				content: "";
+				position: absolute;
+				left: 0;
+				height: .3em;
+				width: 2em;
+				background-color: $grey;
+			}
+			
+			&:before {
+				top: 0;
+			}
+			
+			&:after {
+				bottom: 0;
+			}
+		}
+		
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			height: .3em;
+			width: 2em;
+			background-color: $grey;
+			top: .75em;
+			margin-top: -.15em;
+		}
+		
+		@include mq(netbook) {
+			display: none;
+		}
+	}
+	
+	.main-nav {
+		float: right;
+		margin-top: 28px;
+		
+		@include mq(netbook-max) {
+			float: none;
+			width: 100%;
+			margin: 0;
+			position: absolute;
+			padding: 1rem 2rem;
+			top: 104px;
+			left: -100%;
+			background-color: #FFF;
+			transition: left .35s ease-in-out 0s;
+			
+			&.active {
+				left: 0;
+			}
+		}
+		
+		li {
+			float: left;
+			list-style: none;
+			//margin-left: .25em;
+			margin-left: 2.5em;
+			
+			@include mq(netbook-max) {
+				width: 100%;
+				margin-left: 0;
+				text-align: right;
+				line-height: 3rem;
+				
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+		
+		a {
+			text-transform: uppercase;
+			color: $blue;
+			position: relative;
+			font-weight: 700;
+			//padding: 1.5em;
+			
+			&:after {
+				content: "";
+				position: relative;
+				display: block;
+				//margin-left: 1.5em;
+				//margin-right: 1.5em;
+				//top: -1em;
+				top: -2em;
+				
+				height: 1px;
+				width: 0;
+				background-color: $blue;
+				transition: all 0.35s ease-out 0s;
+				
+				@include mq(netbook-max) {
+					left: auto;
+					right: 0;
+					top: -1em;
+				}
+			}
+			
+			&:hover, &:focus {
+				color: $blue;
+			}
+			
+			&.active {
+				color: $blue;
+				
+				&:after {
+					width: 100%;
+				}
+			}
+		}
+	}
+	
+	&:after {
+		content: "";
+		display: block;
+		height: 12px;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: $headerheight;
+		margin-top: -12px;
+		background: url($stripes) 0 0 repeat;
+	}
+}
