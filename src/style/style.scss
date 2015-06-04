@@ -132,6 +132,27 @@ h4 {
 	text-transform: uppercase;
 }
 
+.left-stripe-border {
+	position: relative;
+	
+	&:after {
+		content: "";
+		height: 100%;
+		left: -37px;
+		position: absolute;
+		top: 0;
+		width: 12px;
+		background-image: url($darkstripes);
+	}
+}
+
+// Generally given to columns that have a .left-stripe-border element
+.extra-left-padding {
+	& > * {
+		margin-left: 37px;
+	}
+}
+
 form {
 	color: $grey;
 	

@@ -2,6 +2,8 @@
 header {
 	height: $headerheight;
 	background-color: #FFF!important;
+	padding: 10px;
+	box-shadow: 0 0 1px rgba(144,144,144,.35);
 	
 	.toggle-topbar {
 		display: block;

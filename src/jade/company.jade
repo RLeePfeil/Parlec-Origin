@@ -3,7 +3,7 @@ html(lang="en").no-js
   head
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
-    title Parlec Origin
+    title Company Name | Parlec Origin
     meta(name="description", content="Parlec Origin")
     include _head.jade
 
@@ -14,31 +14,82 @@ html(lang="en").no-js
     
     section#company-info
       .row
-        .columns.small-12.medium-8
-          h1.company-name Company name
-          p.company-copy Lorem ipsum doler amat sit doler lorem. Ipsum doler sit amet consicutor mont amat lorem. Ullerum oberis nosevi amat sit lorem doler. Lorem ipsum doler amat sit doler lorem. Ipsum doler sit amet consicutor mont amat lorem. Ullerum oberis nosevi amat sit lorem doler.
-        .columns.small-12.medium-4
-          img.company-logo(src="images/companies/logo1.png")
+        .columns.small-12.extra-left-padding.btn-back-column
+          a(href="/").btn-back Go Back
+        .columns.small-12.medium-6.extra-left-padding
+          h1.company-name.left-stripe-border Western Tool &amp; Supply
+          p.company-copy
+            a(href="#") http://companywebsite.com/
+            br
+            strong Sales: 
+            a(href="#") sales@companywebsite.com
+            br
+            strong General Questions:
+            a(href="#") info@companywebsite.com
+            br
+            strong Employee Name:
+            a(href="#") employee@companywebsite.com
+            
+        .columns.small-12.medium-6
+          img.company-logo(src="images/companies/western-tool.jpg")
+    //
+      section#company-contact
+        .row
+          .columns.small-12
+            h3 Contact company
+          .columns.small-12.medium-6
+            p Lorem ipsum doler amat sit doler lorem. Ipsum doler sit amet consicutor mont amat lorem. Ullerum oberis nosevi amat sit lorem doler.
+            address 1234 Street Rd <br/> Chicago, IL 99441 <br/>
+              a(href="mailto:info@company.com") info@company.com
+          .columns.small-12.medium-6
+            form#contact-form
+              input(type="text", placeholder="First name", name="first_name")
+              input(type="text", placeholder="Last name", name="last_name")
+              input(type="text", placeholder="Email", name="email")
+              textarea(placeholder="Comments", name="comments")
+              button(type="submit") Send
     
-    section#company-contact
+    section#company-locations
+      h2 Locations
       .row
         .columns.small-12
-          h3 Contact company
-        .columns.small-12.medium-6
-          p Lorem ipsum doler amat sit doler lorem. Ipsum doler sit amet consicutor mont amat lorem. Ullerum oberis nosevi amat sit lorem doler.
-          address 1234 Street Rd <br/> Chicago, IL 99441 <br/>
-            a(href="mailto:info@company.com") info@company.com
-        .columns.small-12.medium-6
-          form#contact-form
-            input(type="text", placeholder="First name", name="first_name")
-            input(type="text", placeholder="Last name", name="last_name")
-            input(type="text", placeholder="Email", name="email")
-            textarea(placeholder="Comments", name="comments")
-            button(type="submit") Send
-    
-    section#company-location
-      span.bullet
+          .address-group
+            h3.top-stripe California
+            
+            address 203-D Lawrence Dr. <br/>Livermore&nbsp;CA, 94550<br/>
+              a(href="#").btn-view-on-map View on map
+            address 2578 Seaboard Avenue <br/>San Jose,&nbsp;CA 95131-1005<br/>
+              a(href="#").btn-view-on-map View on map
+            address 9550 Waples Street Suite# 105 <br/>San Diego,&nbsp;CA 92121-2984<br/>
+              a(href="#").btn-view-on-map View on map
+            address 1160 North Tustin Avenue <br/>Anaheim,&nbsp;CA 92807-1735<br/>
+              a(href="#").btn-view-on-map View on map
+            address 2640 Mercantile Drive Suite A <br/>Rancho Cordova,&nbsp;CA 95742-6570<br/>
+              a(href="#").btn-view-on-map View on map
+          
+          .address-group
+            h3.top-stripe Colorado
+            
+            address 12301 North Grant Street Suite# 260 <br/>Thornton,&nbsp;CO 80241-3139<br/>
+              a(href="#").btn-view-on-map View on map
+          
+          .address-group
+            h3.top-stripe Nevada
+            
+            address 5100 Grumman Drive Bldg.&nbsp;2 <br/>Carson City,&nbsp;NV 89706-2447<br/>
+              a(href="#").btn-view-on-map View on map
+          
+          .address-group
+            h3.top-stripe Oregon
+            
+            address 4252 SE International Way Suite&nbsp;C <br/>Portland,&nbsp;OR 97222-8822<br/>
+              a(href="#").btn-view-on-map View on map
+          
+          .address-group
+            h3.top-stripe Washington
+            
+            address 19029 36th Avenue West Suite&nbsp;A <br/>Lynnwood,&nbsp;WA 98036-5765<br/>
+              a(href="#").btn-view-on-map View on map
       
-    
     include _footer
     include _scripts.jade

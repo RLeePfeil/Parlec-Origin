@@ -1,20 +1,38 @@
 section#company-info {
-	background-color: $blue;
-	padding-top: 8em;
-	padding-bottom: 4em;
+	padding-top: 8rem;
+	padding-bottom: 4rem;
 	
 	h1.company-name {
-		font-weight: 700;
+		font-weight: 300;
+		color: $blue;
+		margin-bottom: 2rem;
+		
+		&:after {
+			top: 1rem;
+			bottom: 1rem;
+			height: auto;
+		}
 	}
 	
 	p.company-copy {
 		font-size: 1.25rem;
-		color: #FFF;
+		color: $grey;
 		font-weight: 300;
+		
+		strong {
+			font-weight: 600;
+		}
 	}
 	
 	img.company-logo {
-		width: 100%;
+		width: 60%;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	}
+	
+	.btn-back-column {
+		margin-bottom: 2rem;
 	}
 }
 
@@ -28,41 +46,35 @@ section#company-contact {
 	}
 }
 
-section#company-location {
-	background-color: $blue;
-	background-image: url(../images/map.png);
-	background-repeat: no-repeat;
-	background-position: 64% 38%;
-	background-size: 200% auto;
-	height: 80%;
-	width: 100%;
+section#company-locations {
+	background-color: $lightblue;
+	padding-bottom: 4rem;
 	
-	span.bullet {
+	h3 {
 		position: relative;
-		display: block;
-		background: $grey;
-		color: #FFF;
-		width: 50px;
-		height: 50px;
-		content: "";
-		line-height: 50px;
-		font-weight: 700;
-		border-radius: 100%;
-		margin-top: -25px;
-		margin-left: -25px;
-		cursor: pointer;
-		left: 50%;
-		top: 50%;
+		margin-top: 2rem;
 		
 		&:before {
 			content: "";
+			height: 13px;
+			background-image: url($darkstripes);
+			width: 100%;
 			position: absolute;
-			left: -10px;
-			top: -10px;
-			width: 70px;
-			height: 70px;
-			border: 1px solid $grey;
-			border-radius: 100%;
+			margin-top: -24px;
+		}
+	}
+	
+	.address-group {
+		float: left;
+		padding-left: .95rem;
+		padding-right: .95rem;
+		
+		address {
+			float: left;
+			width: 25%;
+			padding-right: 1%;
+			margin-bottom: 3rem;
+			min-width: 200px;
 		}
 	}
 }
