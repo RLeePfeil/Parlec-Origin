@@ -27,7 +27,7 @@
             // Smooth scroll magellan links (to the appropriate spots)
             $('a[data-magellan-arrival]').on('click', function(){
                 $('html,body').animate({
-                    scrollTop: $('#' + $(this).attr('data-magellan-arrival')).offset().top - 50
+                    scrollTop: $('#' + $(this).attr('data-magellan-arrival')).offset().top - Math.floor($('.header').height())
                 }, 1000);
                 
                 return false;
@@ -37,7 +37,10 @@
             $('#btn-find-a-dealer').on('click', function(){
                 $('#find-a-dealer').addClass('open');
                 $('.dealer-map').slideDown();
-                //setTimeout(function(){$('#find-a-dealer').css('background-image', 'none')}, 600); // Probably a better way to do this!
+                
+                 $('html,body').animate({
+                    scrollTop: $(this).offset().top - Math.floor($('.header').height() / 2)
+                }, 1000);
             });
             
             // Open company info when bullet is clicked on

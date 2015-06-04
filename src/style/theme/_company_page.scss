@@ -2,6 +2,10 @@ section#company-info {
 	padding-top: 8rem;
 	padding-bottom: 4rem;
 	
+	@include mq(netbook-max) {
+		padding-top: 2rem;
+	}
+	
 	h1.company-name {
 		font-weight: 300;
 		color: $blue;
@@ -34,6 +38,43 @@ section#company-info {
 	.btn-back-column {
 		margin-bottom: 2rem;
 	}
+	
+	.btn-back {
+		position: relative;
+		color: $blue;
+		font-weight: 600;
+		font-size: 1.15rem;
+		margin-left: 3em;
+		
+		// Carat
+		&:before, &:after {
+			content: "";
+			width: .7em;
+			height: 2px;
+			background-color: $blue;
+			position: absolute;
+			top: 36%;
+			left: -.75rem;
+			transition: all .35s ease-in-out 0s;
+		}
+		
+		&:before {
+			margin-left: -0.65em;
+			transform: rotate(135deg);
+		}
+		
+		&:after {
+			margin-left: -0.65em;
+			margin-top: 0.45em;
+			transform: rotate(45deg);
+		}
+		
+		&:hover {
+			&:before, &:after {
+				left: -1.25rem;
+			}
+		}
+	}
 }
 
 section#company-contact {
@@ -53,6 +94,8 @@ section#company-locations {
 	h3 {
 		position: relative;
 		margin-top: 2rem;
+		margin-bottom: 2rem;
+		margin-right: 2rem;
 		
 		&:before {
 			content: "";
@@ -61,20 +104,89 @@ section#company-locations {
 			width: 100%;
 			position: absolute;
 			margin-top: -24px;
+			max-width: 15.75rem;
 		}
 	}
 	
 	.address-group {
 		float: left;
-		padding-left: .95rem;
-		padding-right: .95rem;
+		
+		&:first-child {
+            width: 100% !important;
+        }
+        @include if_there_are(2) {
+            width: 100%;
+        }
+        @include if_there_are(3) {
+            // width: 33.3%;
+            width: 50%;
+        }
+        @include if_there_are(4) {
+            width: 33.3%;
+            // width: 20%;
+        }
+        @include if_there_are(5) {
+            width: 25%;
+        }
+        @include if_there_are(6) {
+        }
+		
+		@include mq(netbook-max) {
+			&:first-child {
+				width: 100% !important;
+			}
+			@include if_there_are(2) {
+				width: 100%;
+			}
+			@include if_there_are(3) {
+				// width: 33.3%;
+				width: 50%;
+			}
+			@include if_there_are(4) {
+				width: 50%;
+				// width: 20%;
+			}
+			@include if_there_are(5) {
+				width: 50%;
+			}
+			@include if_there_are(6) {
+			}
+		}
 		
 		address {
 			float: left;
 			width: 25%;
-			padding-right: 1%;
 			margin-bottom: 3rem;
-			min-width: 200px;
+			padding-right: 2rem;
+			//min-width: 200px;
+			
+			@include if_there_are(1) {
+				width: 100%
+			}
+			@include if_there_are(2) {
+				width: 50%
+			}
+			@include if_there_are(3) {
+				width: 33.3%
+			}
+			@include if_there_are(4) {
+				width: 25%
+			}
+			
+			@include mq(netbook-max) {
+				@include if_there_are(1) {
+					width: 100%
+				}
+				@include if_there_are(2) {
+					width: 50%
+				}
+				@include if_there_are(3) {
+					width: 50%
+				}
+				@include if_there_are(4) {
+					width: 50%
+				}
+			}
 		}
 	}
 }
