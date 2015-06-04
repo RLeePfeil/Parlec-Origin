@@ -1,0 +1,355 @@
+section#find-a-dealer {
+	background-image: url($widestripes);
+	background-position: top center;
+	transition: background-color 1s ease-in-out 0s;
+	/*
+	&.open {
+		background-color: $blue;
+		
+		#btn-find-a-dealer {
+			color: #FFF;
+			
+			&:before, &:after {
+				background-color: #FFF;
+			}
+		}
+	}
+	*/
+	.dealer-map li {
+		list-style: none;
+		margin-bottom: 20px;
+		
+		.company-info-block {
+			padding: 0 20px 20px;
+			
+			img {
+				width: 40px;
+				float: left;
+				margin-right: 10px;
+			}
+			
+			h5, p, a {
+				margin-left: 60px;
+			}
+			
+			h5 {
+				//text-transform: uppercase;
+				letter-spacing: 0.05em;
+				color: $blue;
+				min-width: 9.75em;
+				font-weight: 600;
+			}
+			
+			p {
+				font-weight: 300;
+				letter-spacing: 0.05em;
+				color: $blue;
+			}
+			
+			a {
+				display: block;
+				color: $blue;
+				position: relative;
+				font-weight: 600;
+				transition: all .35s ease-in-out 0s;
+				
+				// Carat
+				&:before, &:after {
+					content: "";
+					width: .55em;
+					height: 3px;
+					background-color: $blue;
+					position: absolute;
+					top: 39%;
+					left: 5.9em;
+					transition: all .35s ease-in-out 0s;
+				}
+				
+				&:before {
+					margin-left: -0.65em;
+					transform: rotate(-135deg);
+				}
+				
+				&:after {
+					margin-left: -0.65em;
+					margin-top: 0.25em;
+					transform: rotate(-45deg);
+				}
+				
+				&:hover {
+					color: $darkblue;
+					
+					&:before, &:after {
+						left: 6.25em;
+						background-color: $darkblue;
+					}
+				}
+			}
+			
+			// multiple companies on one bullet
+			ul {
+				margin: 0;
+				
+				li {
+					width: 100%;
+					padding-bottom: 40px;
+					margin: 0;
+					position: static;
+					float: none;
+					
+					&:last-child {
+						padding-bottom: 0;
+					}
+				}
+			}
+		}
+		
+		span.bullet {
+			display: none;
+		}
+	}
+	
+	@include mq(tablet) {
+		.dealer-map li {
+			width: 50%;
+			float: left;
+		}
+	}
+	
+	@include mq(netbook) {
+		.dealer-map {
+			padding: 0 10% 10%;
+			
+			.dealer-map-container {
+				background-image: url(../images/map.png);
+				background-size: 100% auto;
+				padding-bottom: 61.382%;
+				position: relative;
+			}
+			
+			li {
+				position: absolute;
+				width: auto;
+				float: none;
+				
+				&.open {
+					.company-info-block {
+						transform: translateX(-50%) translateY(0px);
+						opacity: 1;
+						left: 0;
+						transition: transform .35s ease-out 0s, opacity .35s ease-out 0s, left 0s ease-out 0s;
+					}
+				}
+				
+				.company-info-block {
+					padding: 20px;
+					border: 1px solid #dddddd;
+					background-color: #FFF;
+					position: absolute;
+					bottom: 40px;
+					transform: translateX(-50%) translateY(20px);
+					z-index: 11;
+					opacity: 0;
+					left: -9999em; // To delay-hide it after fade out
+					transition: transform .15s ease-out 0s, opacity .15s ease-out 0s, left 0s ease-out .15s;
+					
+					&:after {
+						position: absolute;
+						bottom: -8px;
+						left: 50%;
+						margin-left: -8px;
+						content: "";
+						display: block;
+						width: 16px;
+						height: 16px;
+						transform: rotateZ(45deg);
+						background-color: #FFF;
+					}
+					
+					h5 {
+						white-space: nowrap;
+					}
+					
+					// multiple companies on one bullet
+					ul {
+						margin: -20px;
+						
+						li {
+							margin: 0;
+							position: relative;
+							padding: 15px 48px 15px 24px;
+							border-bottom: 1px solid #dddddd;
+							
+							img {
+								display: none;
+							}
+							
+							h5 {
+								margin: 0;
+								line-height: 1.1;
+							}
+							
+							h5, p, a {
+								margin-left: 0;
+							}
+							
+							a {
+								position: absolute;
+								width: 100%;
+								height: 100%;
+								text-indent: -9999em;
+								top: 0;
+								left: 0;
+								font-size: 1.6rem;
+								
+								&:before, &:after {
+									left: auto;
+									right: .7em;
+									top: 53%;
+								}
+								
+								&:after {
+									margin-top: 0;
+								}
+								
+								&:before {
+									margin-top: -.35em;
+								}
+								
+								&:hover {
+									&:before,&:after {left: auto; right: .5em;}
+								}
+							}
+							
+							&:last-child {
+								padding-bottom: 15px;
+							}
+						}
+					}
+				}
+				
+				span.bullet {
+					position: relative;
+					display: block;
+					background: $blue;
+					color: #FFF;
+					width: 20px;
+					height: 20px;
+					content: "";
+					line-height: 20px;
+					font-weight: 700;
+					border-radius: 100%;
+					margin-top: -10px;
+					margin-left: -10px;
+					cursor: pointer;
+					
+					&:before {
+						content: "";
+						position: absolute;
+						left: -4px;
+						top: -4px;
+						width: 28px;
+						height: 28px;
+						border: 1px solid $blue;
+						border-radius: 100%;
+					}
+					/* no +
+					&:after {
+						content: "+";
+						position: absolute;
+						text-align: center;
+						width: 20px;
+						height: 20px;
+						line-height: 18px;
+						z-index: 10;
+						color: #FFF;
+					}
+					*/
+				}
+				
+				&.company-1 {
+					left: 27%;
+					top: 13%;
+				}
+				
+				&.company-2 {
+					left: 16%;
+					top: 37%;
+				}
+				
+				&.company-3 {
+					left: 36%;
+					top: 48%;
+				}
+				
+				&.company-4 {
+					left: 58%;
+					top: 38%;
+				}
+				
+				&.company-5 {
+					left: 43%;
+					top: 75%;
+				}
+				
+				&.company-6 {
+					left: 71%;
+					top: 58%;
+				}
+				
+				&.company-7 {
+					left: 84%;
+					top: 24%;
+				}
+				
+				&.company-8 {
+					left: 96%;
+					top: 9%;
+				}
+				
+				&.company-9 {
+					left: 83%;
+					top: 78%;
+				}
+			}
+		}
+	}
+}
+
+#btn-find-a-dealer {
+	display: block;
+	padding: 1em 0 2em;
+	width: 100%;
+	color: $blue;
+	font-size: 200%;
+	font-weight: 600;
+	text-align: center;
+	text-transform: uppercase;
+	transition: color 1s ease-in-out 0s;
+	
+	@include mq(netbook) {
+		padding: 3em 0 4em;
+	}
+	
+	// Carat
+	&:before, &:after {
+		content: "";
+		width: .75em;
+		height: 2px;
+		background-color: $blue;
+		position: absolute;
+		left: 50%;
+		margin-top: 2em;
+		transition: background-color 1s ease-in-out 0s;
+	}
+	
+	&:before {
+		transform: rotate(45deg);
+		margin-left: -.65em;
+	}
+	
+	&:after {
+		transform: rotate(-45deg);
+		margin-left: -.15em;
+	}
+}

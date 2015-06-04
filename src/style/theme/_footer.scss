@@ -1,0 +1,41 @@
+footer.footer {
+	background-color: $darkblue;
+	color: #FFF;
+	padding-top: 5rem;
+	padding-bottom: 2.5rem;
+	
+	.footer-logo {
+		max-width: 286px;
+	}
+	
+	ul {
+		list-style: none;
+		
+		li {
+			font-weight: 300;
+			
+			strong {
+				font-weight: 600;
+			}
+		}
+	}
+	
+	.footer-contact-list, .footer-address {
+		
+	}
+	
+	a {
+		color: #FFF;
+	}
+	
+	small.center {
+		font-size: .75rem;
+		display: block;
+		text-align: center;
+		margin: 2rem 0;
+		
+		a {
+			font-weight: 600;
+		}
+	}
+}

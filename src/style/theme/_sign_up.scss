@@ -1,0 +1,23 @@
+section#sign-up {
+	background-color: $blue;
+	padding: 4em 0;
+	
+	p {
+		color: #FFF;
+	}
+	
+	h2 {
+		color: #FFF;
+	}
+	
+	h3 {
+		color: #FFF;
+		padding-bottom: 2em;
+		text-align: center;
+	}
+	
+	@include mq(netbook) {
+		// so magellan looks good when arriving
+		min-height: 100%;
+	}
+}

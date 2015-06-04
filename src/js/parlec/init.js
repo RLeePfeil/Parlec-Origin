@@ -31,13 +31,13 @@
                 }, 1000);
                 
                 return false;
-            })
+            });
             
             // Open dealer map (desktop and mobile)
             $('#btn-find-a-dealer').on('click', function(){
                 $('#find-a-dealer').addClass('open');
                 $('.dealer-map').slideDown();
-                setTimeout(function(){$('#find-a-dealer').css('background-image', 'none')}, 600); // Probably a better way to do this!
+                //setTimeout(function(){$('#find-a-dealer').css('background-image', 'none')}, 600); // Probably a better way to do this!
             });
             
             // Open company info when bullet is clicked on

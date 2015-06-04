@@ -1,0 +1,91 @@
+section#main {
+	padding-top: $headerheight; // Offset the fixed header
+	background-color: $blue;
+	background-image: url(../images/bg-main.jpg);
+	background-size: cover;
+	background-position: 50% bottom;
+	color: #FFF;
+	min-height: 644px;
+	
+	.row {
+		padding-top: 100px;
+	}
+	
+	h1 {
+		&:after {
+			content: "";
+			height: 120px;
+			left: -25px;
+			position: absolute;
+			top: 54px;
+			width: 12px;
+			background-image: url($darkstripes);
+		}
+	}
+	
+	button {
+		border: 1px solid #FFF;
+		border-radius: 4px;
+		font-weight: 500;
+		text-transform: uppercase;
+		padding-right: 3em;
+		background-image: url($darkstripes);
+		background-color: rgba(255,255,255,.15);
+		
+		// Carat
+		&:before, &:after {
+			content: "";
+			width: .7em;
+			height: 1px;
+			background-color: #FFF;
+			position: absolute;
+			top: 40%;
+			right: 1.75em;
+			transition: all .35s ease-in-out 0s;
+		}
+		
+		&:before {
+			margin-left: -0.65em;
+			transform: rotate(-135deg);
+		}
+		
+		&:after {
+			margin-left: -0.65em;
+			margin-top: 0.45em;
+			transform: rotate(-45deg);
+		}
+		
+		&:hover {
+			background-color: $orange;
+			
+			&:before, &:after {
+				right: 1.4em;
+			}
+		}
+	}
+	
+	@include mq(netbook-max) {
+		padding-top: 100%;
+		background-color: #FFF;
+		background-size: 200% auto;
+		background-position: 100% top;
+		background-repeat: no-repeat;
+		
+		.row {
+			padding: 2rem;
+			color: $grey;
+			background-color: $lightblue;
+		}
+		
+		h1 {
+			color: $grey;
+			font-size: 3rem;
+			line-height: 1.15em;
+			margin-bottom: .5em;
+		}
+		
+		button {
+			background-color: $blue;
+		}
+	}
+}

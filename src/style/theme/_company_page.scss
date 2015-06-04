@@ -1,0 +1,68 @@
+section#company-info {
+	background-color: $blue;
+	padding-top: 8em;
+	padding-bottom: 4em;
+	
+	h1.company-name {
+		font-weight: 700;
+	}
+	
+	p.company-copy {
+		font-size: 1.25rem;
+		color: #FFF;
+		font-weight: 300;
+	}
+	
+	img.company-logo {
+		width: 100%;
+	}
+}
+
+section#company-contact {
+	background-color: $lightblue;
+	padding-top: 4em;
+	padding-bottom: 4em;
+	
+	h3 {
+		margin-bottom: 2rem;
+	}
+}
+
+section#company-location {
+	background-color: $blue;
+	background-image: url(../images/map.png);
+	background-repeat: no-repeat;
+	background-position: 64% 38%;
+	background-size: 200% auto;
+	height: 80%;
+	width: 100%;
+	
+	span.bullet {
+		position: relative;
+		display: block;
+		background: $grey;
+		color: #FFF;
+		width: 50px;
+		height: 50px;
+		content: "";
+		line-height: 50px;
+		font-weight: 700;
+		border-radius: 100%;
+		margin-top: -25px;
+		margin-left: -25px;
+		cursor: pointer;
+		left: 50%;
+		top: 50%;
+		
+		&:before {
+			content: "";
+			position: absolute;
+			left: -10px;
+			top: -10px;
+			width: 70px;
+			height: 70px;
+			border: 1px solid $grey;
+			border-radius: 100%;
+		}
+	}
+}
